@@ -68,6 +68,12 @@ public class IACharacterVehiculoSoldier : IACharacterVehiculo
 
     private void OnDrawGizmos()
     {
+        if(health == null )
+        {
+            return;
+        }
+
+
         Ray[] arrayRay = new Ray[3];
         arrayRay[0] = new Ray(health.AimOffset.position, health.AimOffset.right);
         arrayRay[1] = new Ray(health.AimOffset.position, -health.AimOffset.forward);
