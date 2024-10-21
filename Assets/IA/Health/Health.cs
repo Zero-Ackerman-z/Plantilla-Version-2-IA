@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum TypeAgent { A, B, C, D, E }
+
+public enum TypeAgent { A, B, C, D, E , F }
 public enum UnitGame
 {
     Zombie,
     Soldier,
+    Civil,
+    Items,
     None
 }
 public class Health : MonoBehaviour
@@ -33,7 +36,7 @@ public class Health : MonoBehaviour
 
     public bool Importal = false;
     public UnitGame _UnitGame;
-    public bool IsCantView=true;
+    public bool IsCantView = true;
 
     IEnumerator HurtingMeActive(Health enemy)
     {
@@ -43,14 +46,14 @@ public class Health : MonoBehaviour
         StopCoroutine(HurtingMeroutine);
     }
 
-    public virtual void Damage(int damage,Health enemy)
+    public virtual void Damage(int damage, Health enemy)
     {
-        
+
         if (Importal) return;
-       
+
         if (!IsDead)
         {
-           
+
             if ((health - damage) > 0)
                 health -= damage;
             else
@@ -62,7 +65,7 @@ public class Health : MonoBehaviour
 
     }
 
-    
+
     public void UpdateHealthBar()
     {
         if (HealthBarLocal != null)
@@ -81,3 +84,4 @@ public class Health : MonoBehaviour
 
 
 }
+

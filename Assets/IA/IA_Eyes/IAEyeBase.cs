@@ -181,7 +181,7 @@ public class DataView : DataViewBase
     {
         if (!IsDrawGizmo) return;
 
-       
+
         if (mesh != null && Owner != null)
         {
             if (Sight)
@@ -197,7 +197,7 @@ public class DataView : DataViewBase
 
     }
 }
- 
+
 
 public class IAEyeBase : MonoBehaviour
 {
@@ -225,8 +225,8 @@ public class IAEyeBase : MonoBehaviour
 
     public Vector3 Target { get; set; }
 
-   
-    
+
+
 
     #region Direction and Distance
     public float DistanceEnemy
@@ -265,7 +265,7 @@ public class IAEyeBase : MonoBehaviour
             return Vector3.zero;
         }
     }
-     
+
     public float DistanceTarget
     {
         get
@@ -316,7 +316,10 @@ public class IAEyeBase : MonoBehaviour
         {
             ViewEnemy = null;
         }
-
+        if (ViewAllie != null && ((ViewAllie.IsDead) || (!ViewAllie.IsCantView)))
+        {
+            ViewAllie = null;
+        }
     }
 
     public virtual void Scan()
@@ -328,17 +331,17 @@ public class IAEyeBase : MonoBehaviour
         CountEnemyView = 0;
         count = colliders.Length;
 
-        
+
         float min_dist = 10000000000f;
 
         for (int i = 0; i < count; i++)
         {
 
             GameObject obj = colliders[i].gameObject;
-            
+
             if (this.IsNotIsThis(this.gameObject, obj))
             {
-                
+
                 Health Scanhealth = obj.GetComponent<Health>();
                 if (Scanhealth != null &&
                     obj.activeSelf &&
@@ -346,7 +349,7 @@ public class IAEyeBase : MonoBehaviour
                     Scanhealth.IsCantView &&
                     mainDataView.IsInSight(Scanhealth.AimOffset))
                 {
-                    ExtractViewEnemy(ref min_dist, Scanhealth);
+                    ExtractViewEnemyViewAllie(ref min_dist, Scanhealth);
                 }
 
             }
@@ -357,27 +360,26 @@ public class IAEyeBase : MonoBehaviour
 
     }
 
-    private void ExtractViewEnemy(ref float min_dist, Health _health)
+    public void ExtractViewEnemyViewAllie(ref float min_dist, Health _health)
     {
-        
+
         if (!IsAllies(_health))
         {
-             
+
             float dist = (transform.position - _health.transform.position).magnitude;
             if (min_dist > dist)
             {
                 ViewEnemy = _health;
                 min_dist = dist;
-                 
+
             }
             CountEnemyView++;
         }
-        //else
-        //if (_health.gameObject.CompareTag("Player"))
-        //{
-        //    if (ViewAllie == null)
-        //        ViewAllie = _health;
-        //}
+        else
+        {
+            if (ViewAllie == null)
+                ViewAllie = _health;
+        }
 
     }
 
@@ -401,4 +403,5 @@ public class IAEyeBase : MonoBehaviour
     }
 
 }
+
 

@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class IACharacterVehiculo : IACharacterControl
 {
     protected CalculateDiffuse _CalculateDiffuse;
     protected float speedRotation = 0;
 
     public float RangeWander;
-    Vector3 positionWander;
+    protected Vector3 positionWander;
     float FrameRate = 0;
     float Rate = 4;
     public override void LoadComponent()
@@ -63,6 +62,11 @@ public class IACharacterVehiculo : IACharacterControl
         if (AIEye.ViewAllie == null) return;
         MoveToPosition(AIEye.ViewAllie.transform.position);
     }
+    public virtual void MoveToItem()
+    {
+        if (IAEyeCivil.ViewItem == null) return;
+        MoveToPosition(IAEyeCivil.ViewItems.transform.position);
+    }
     public virtual void MoveToEvadEnemy()
     {
         if (AIEye.ViewEnemy == null) return;
@@ -83,12 +87,12 @@ public class IACharacterVehiculo : IACharacterControl
 
         float distance = (transform.position - positionWander).magnitude;
 
-        if(distance<2)
+        if (distance < 2)
         {
             positionWander = RandoWander(transform.position, RangeWander);
         }
 
-        if(FrameRate>Rate)
+        if (FrameRate > Rate)
         {
             FrameRate = 0;
             positionWander = RandoWander(transform.position, RangeWander);

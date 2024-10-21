@@ -89,11 +89,11 @@ GameObject:
   - component: {fileID: 1555900917653758338}
   - component: {fileID: 411760507778422221}
   - component: {fileID: 411760507778422220}
-  - component: {fileID: 411760507778422219}
   - component: {fileID: 411760507778422218}
   - component: {fileID: 411760507778422217}
   - component: {fileID: 411760507778422216}
   - component: {fileID: 411760507778422225}
+  - component: {fileID: 7227963208410158231}
   m_Layer: 7
   m_Name: NPCZombie
   m_TagString: Untagged
@@ -268,6 +268,7 @@ MonoBehaviour:
   AimOffset: {fileID: 411760508231922177}
   ViewEnemy: {fileID: 0}
   ViewAllie: {fileID: 0}
+  ViewItem: {fileID: 0}
   AttackDataView:
     angle: 52.4
     height: 2.18
@@ -285,46 +286,6 @@ MonoBehaviour:
     Sight: 0
     meshColorInSight: {r: 1, g: 0, b: 0, a: 0.53333336}
     InsideObject: 0
---- !u!114 &411760507778422219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411760507778422215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startWhenEnabled: 1
-  asynchronousLoad: 0
-  pauseWhenDisabled: 0
-  restartWhenComplete: 0
-  logTaskChanges: 0
-  group: 0
-  resetValuesOnRestart: 0
-  externalBehavior: {fileID: 11400000, guid: d1a1ef65e5903a94e9f8e2e314256124, type: 2}
-  mBehaviorSource:
-    behaviorName: Behavior
-    behaviorDescription: 
-    mTaskData:
-      types: []
-      parentIndex: 
-      startIndex: 
-      variableStartIndex: 
-      JSONSerialization: 
-      fieldSerializationData:
-        typeName: []
-        fieldNameHash: 
-        startIndex: 
-        dataPosition: 
-        unityObjects: []
-        byteData: 
-        byteDataArray: 
-      Version: 
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
 --- !u!195 &411760507778422218
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -503,6 +464,46 @@ MonoBehaviour:
     m_Bits: 256
   IsGizmos: 0
   ColorGizmos: {r: 1, g: 0, b: 0.75889635, a: 1}
+--- !u!114 &7227963208410158231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411760507778422215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 1
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 0
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 11400000, guid: d1a1ef65e5903a94e9f8e2e314256124, type: 2}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: 
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &411760507813235456
 GameObject:
   m_ObjectHideFlags: 0
