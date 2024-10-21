@@ -64,7 +64,7 @@ public class IACharacterVehiculo : IACharacterControl
     }
     public virtual void MoveToItem()
     {
-        if (AIEye.ViewItem == null) return;
+        if (IAEyeCivil.ViewItem == null) return;
         MoveToPosition(IAEyeCivil.ViewItem.transform.position);
     }
     public virtual void MoveToEvadEnemy()

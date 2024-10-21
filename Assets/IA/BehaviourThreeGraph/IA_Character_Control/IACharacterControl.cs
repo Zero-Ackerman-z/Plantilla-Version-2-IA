@@ -9,6 +9,7 @@ public class IACharacterControl : MonoBehaviour
     public NavMeshAgent agent { get; set; }
     public Health health { get; set; }
     public IAEyeBase AIEye { get; set; }
+    public IAEyeCivil IAEyeCivil { get; set; }
 
     public virtual void LoadComponent()
     {
