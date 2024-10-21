@@ -5,7 +5,7 @@ using UnityEngine;
 public class IAEyeCivil : IAEyeBase
 {
     public Health ViewItem;
-    private void Start()
+    public void Start()
     {
         LoadComponent();
     }
@@ -92,9 +92,9 @@ public class IAEyeCivil : IAEyeBase
             ViewAllie = null;
         }
 
-        if (ViewItem != null && ((ViewItems.IsDead) || (!ViewItems.IsCantView)))
+        if (ViewItem != null && ((ViewItem.IsDead) || (!ViewItem.IsCantView)))
         {
-            ViewItems = null;
+            ViewItem = null;
         }
 
     }
