@@ -46,6 +46,18 @@ public class ActionWander : ActionNodeVehicle
                     ((IACharacterVehiculoCivil)_IACharacterVehiculo).MoveToWander();
                 }
                 break;
+            case UnitGame.Zebra:
+                if (_IACharacterVehiculo is IACharacterVehiculoZebra)
+                {
+                    ((IACharacterVehiculoZebra)_IACharacterVehiculo).MoveToWander();
+                }
+                break;
+            case UnitGame.Lion:
+                if (_IACharacterVehiculo is IACharacterVehiculoLion)
+                {
+                    ((IACharacterVehiculoLion)_IACharacterVehiculo).MoveToWander();
+                }
+                break;
             case UnitGame.None:
                 break;
             default:

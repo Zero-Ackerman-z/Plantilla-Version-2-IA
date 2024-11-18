@@ -5,6 +5,8 @@ public class IACharacterVehiculo : IACharacterControl
 {
     protected CalculateDiffuse _CalculateDiffuse;
     protected float speedRotation = 0;
+    protected float movementSpeed = 0;
+    protected float distanceSpeed = 0;
 
     public float RangeWander;
     protected Vector3 positionWander;
@@ -47,7 +49,6 @@ public class IACharacterVehiculo : IACharacterControl
         }
     }
 
-
     public virtual void MoveToPosition(Vector3 pos)
     {
         agent.SetDestination(pos);
@@ -55,8 +56,20 @@ public class IACharacterVehiculo : IACharacterControl
     public virtual void MoveToEnemy()
     {
         if (AIEye.ViewEnemy == null) return;
+
+        distanceSpeed = (transform.position - AIEye.ViewEnemy.transform.position).magnitude;
+
+        _CalculateDiffuse.CalculateDistance(distanceSpeed);  
+        _CalculateDiffuse.CalculateSpeed(distanceSpeed);     
+
+        movementSpeed = _CalculateDiffuse.speedFactor * _CalculateDiffuse.distanceSpeed;
+        agent.speed = movementSpeed;  
+
+        speedRotation = _CalculateDiffuse.speedRotation;
+
         MoveToPosition(AIEye.ViewEnemy.transform.position);
     }
+
     public virtual void MoveToAllied()
     {
         if (AIEye.ViewAllie == null) return;
