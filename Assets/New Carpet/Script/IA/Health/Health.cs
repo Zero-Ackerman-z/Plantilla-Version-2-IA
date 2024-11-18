@@ -65,9 +65,7 @@ public class Health : MonoBehaviour
             if (enemy != null)
                 HurtingMeroutine = StartCoroutine(HurtingMeActive(enemy));
         }
-
     }
-
 
     public void UpdateHealthBar()
     {
@@ -81,10 +79,6 @@ public class Health : MonoBehaviour
     public virtual void LoadComponent()
     {
         health = healthMax;
-
-
     }
-
-
 }
 

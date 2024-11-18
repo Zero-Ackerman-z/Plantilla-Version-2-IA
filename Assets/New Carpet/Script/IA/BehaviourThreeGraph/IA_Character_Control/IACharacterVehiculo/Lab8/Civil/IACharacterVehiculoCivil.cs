@@ -5,7 +5,7 @@ using UnityEngine;
 public class IACharacterVehiculoCivil : IACharacterVehiculo
 {
     Vector3 normales = Vector3.zero;
-    // Start is called before the first frame update
+
     void Awake()
     {
         this.LoadComponent();
@@ -14,7 +14,6 @@ public class IACharacterVehiculoCivil : IACharacterVehiculo
     {
         base.LoadComponent();
     }
-
     public override void MoveToPosition(Vector3 pos)
     {
         base.MoveToPosition(pos);
@@ -50,11 +49,10 @@ public class IACharacterVehiculoCivil : IACharacterVehiculo
                 LookPosition(((IAEyeCivil)AIEye).ViewItem.transform.position);
             }
         }
-
     }
+
     public void MoveToStrategy()
     {
-
         if (AIEye.ViewEnemy == null) return;
         Vector3 dir = Vector3.zero;
         normales = ColliderWall();
@@ -66,9 +64,8 @@ public class IACharacterVehiculoCivil : IACharacterVehiculo
         }
         Vector3 newPosition = transform.position + dir * 2;
         MoveToPosition(newPosition);
-
-
     }
+
     Vector3 ColliderWall()
     {
         normales = Vector3.zero;
@@ -111,20 +108,15 @@ public class IACharacterVehiculoCivil : IACharacterVehiculo
             Gizmos.DrawLine(arrayRay[i].origin, arrayRay[i].origin + arrayRay[i].direction * 3f);
             Gizmos.DrawSphere(arrayRay[i].origin + arrayRay[i].direction * 3f, 0.7f);
         }
-
-
         Gizmos.color = Color.yellow;
         if (normales != Vector3.zero)
         {
             Gizmos.DrawLine(health.AimOffset.position, health.AimOffset.position + normales * 2f);
             Gizmos.DrawSphere(health.AimOffset.position + normales * 2f, 0.5f);
         }
-
-
         Gizmos.color = Color.green;
 
         Gizmos.DrawLine(transform.position, positionWander);
         Gizmos.DrawSphere(positionWander, 0.5f);
-
     }
 }
