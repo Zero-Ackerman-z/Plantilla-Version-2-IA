@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-[TaskCategory("MyAI/Move")]
-public class ActionFollowEnemy : ActionNodeVehicle
+[TaskCategory("MyAI/Action")]
+public class ActionNodeAttack : ActionNodeAction
 {
     public override void OnStart()
     {
@@ -11,43 +11,42 @@ public class ActionFollowEnemy : ActionNodeVehicle
     }
     public override TaskStatus OnUpdate()
     {
-        if(_IACharacterVehiculo.health.IsDead)
+        if (_IACharacterVehiculo.health.IsDead)
             return TaskStatus.Failure;
 
         SwitchUnit();
 
         return TaskStatus.Success;
-
     }
     void SwitchUnit()
     {
-
-
         switch (_UnitGame)
         {
             case UnitGame.Zombie:
-                if(_IACharacterVehiculo is IACharacterVehiculoZombie)
+                if (_IACharacterActions is IACharacterActionsZombie)
                 {
-                    ((IACharacterVehiculoZombie)_IACharacterVehiculo).MoveToEnemy();
-                    ((IACharacterVehiculoZombie)_IACharacterVehiculo).LookEnemy();
+                    ((IACharacterActionsZombie)_IACharacterActions).Attack();
                 }
+                break;
 
-                break;
             case UnitGame.Soldier:
-                if (_IACharacterVehiculo is IACharacterVehiculoSoldier)
+                if (_IACharacterActions is IACharacterActionsSoldier)
                 {
-                    ((IACharacterVehiculoSoldier)_IACharacterVehiculo).MoveToEnemy();
-                    ((IACharacterVehiculoSoldier)_IACharacterVehiculo).LookEnemy();
+                    ((IACharacterActionsSoldier)_IACharacterActions).Attack();
                 }
                 break;
+
+            case UnitGame.Elephant:
+                if (_IACharacterActions is IACharacterActionsElephant)
+                {
+                    ((IACharacterActionsElephant)_IACharacterActions).Attack();
+                }
+                break;
+
             case UnitGame.None:
                 break;
             default:
                 break;
         }
-
-
-
     }
-
 }

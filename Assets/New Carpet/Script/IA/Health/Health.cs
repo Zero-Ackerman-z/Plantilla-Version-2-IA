@@ -11,6 +11,9 @@ public enum UnitGame
     Soldier,
     Civil,
     Item,
+    Lion,
+    Zebra,
+    Elephant,
     None
 }
 public class Health : MonoBehaviour

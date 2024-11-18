@@ -13,16 +13,11 @@ public class ActionWander : ActionNodeVehicle
     {
         if(_IACharacterVehiculo.health.IsDead)
             return TaskStatus.Failure;
-
         SwitchUnit();
-
         return TaskStatus.Success;
-
     }
     void SwitchUnit()
     {
-
-
         switch (_UnitGame)
         {
             case UnitGame.Zombie:
@@ -31,8 +26,8 @@ public class ActionWander : ActionNodeVehicle
                     ((IACharacterVehiculoZombie)_IACharacterVehiculo).MoveToWander();
                     
                 }
-
                 break;
+
             case UnitGame.Soldier:
                 if (_IACharacterVehiculo is IACharacterVehiculoSoldier)
                 {
@@ -40,20 +35,26 @@ public class ActionWander : ActionNodeVehicle
 
                 }
                 break;
+
             case UnitGame.Civil:
                 if (_IACharacterVehiculo is IACharacterVehiculoCivil)
                 {
                     ((IACharacterVehiculoCivil)_IACharacterVehiculo).MoveToWander();
                 }
                 break;
+
+            case UnitGame.Elephant:
+                if (_IACharacterVehiculo is IACharacterVehiculoElephant)
+                {
+                    ((IACharacterVehiculoElephant)_IACharacterVehiculo).MoveToWander();
+                }
+                break;
+
             case UnitGame.None:
                 break;
+
             default:
                 break;
         }
-
-
-
     }
-
 }
