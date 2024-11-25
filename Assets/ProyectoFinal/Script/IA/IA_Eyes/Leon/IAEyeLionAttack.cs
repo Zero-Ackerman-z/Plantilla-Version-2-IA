@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAEyeLionAttack : MonoBehaviour
+public class IAEyeLionAttack : IAEyeBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public DataView AttackDataView = new DataView();
+
+    public override void LoadComponent()
     {
-        
+        base.LoadComponent();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public override void UpdateScan()
     {
-        
+        base.UpdateScan();
+        if (ViewEnemy != null)
+            AttackDataView.IsInSight(ViewEnemy.AimOffset);
+        else
+        {
+            AttackDataView.Sight = false;
+            mainDataView.Sight = false;
+        }
+
     }
+
 }
