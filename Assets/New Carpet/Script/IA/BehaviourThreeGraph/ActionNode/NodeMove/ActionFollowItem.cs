@@ -10,7 +10,6 @@ public class ActionFollowItem : ActionNodeVehicle
     {
         base.OnStart();
     }
-
     public override TaskStatus OnUpdate()
     {
         if (_IACharacterVehiculo.health.IsDead)
@@ -32,6 +31,13 @@ public class ActionFollowItem : ActionNodeVehicle
                     ((IACharacterVehiculoCivil)_IACharacterVehiculo).MoveToItem();
                     // Mirar hacia el ítem
                     ((IACharacterVehiculoCivil)_IACharacterVehiculo).LookToItem();
+                }
+                break;
+            case UnitGame.Elephant:
+                if (_IACharacterVehiculo is IACharacterVehiculoElephant)
+                {
+                    ((IACharacterVehiculoElephant)_IACharacterVehiculo).MoveToItem();
+                    ((IACharacterVehiculoElephant)_IACharacterVehiculo).LookToItem();
                 }
                 break;
             case UnitGame.None:

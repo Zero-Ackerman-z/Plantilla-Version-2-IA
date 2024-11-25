@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class IAEyeCivil : IAEyeBase
 {
+<<<<<<< Updated upstream
     public Health ViewItems;
+=======
+>>>>>>> Stashed changes
     private void Start()
     {
         LoadComponent();
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     private void Update()
     {
         UpdateScan();
@@ -18,6 +24,7 @@ public class IAEyeCivil : IAEyeBase
     {
         base.LoadComponent();
     }
+<<<<<<< Updated upstream
     public override void Scan()
     {
         if (health.HurtingMe != null) return;
@@ -99,11 +106,16 @@ public class IAEyeCivil : IAEyeBase
 
     }
 
+=======
+>>>>>>> Stashed changes
     private void OnValidate()
     {
         mainDataView.CreateMesh();
         RadioActionDataView.CreateMesh();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
     private void OnDrawGizmos()
     {

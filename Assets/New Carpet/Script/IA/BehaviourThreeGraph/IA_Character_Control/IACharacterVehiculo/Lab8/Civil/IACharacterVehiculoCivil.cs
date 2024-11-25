@@ -5,7 +5,6 @@ using UnityEngine;
 public class IACharacterVehiculoCivil : IACharacterVehiculo
 {
     Vector3 normales = Vector3.zero;
-    // Start is called before the first frame update
     void Awake()
     {
         this.LoadComponent();
@@ -14,7 +13,6 @@ public class IACharacterVehiculoCivil : IACharacterVehiculo
     {
         base.LoadComponent();
     }
-
     public override void MoveToPosition(Vector3 pos)
     {
         base.MoveToPosition(pos);
@@ -31,6 +29,7 @@ public class IACharacterVehiculoCivil : IACharacterVehiculo
     {
         base.MoveToEvadEnemy();
     }
+<<<<<<< Updated upstream
     public void MoveToItem()
     {
         if (AIEye is IAEyeCivil)
@@ -52,6 +51,8 @@ public class IACharacterVehiculoCivil : IACharacterVehiculo
         }
 
     }
+=======
+>>>>>>> Stashed changes
     public void MoveToStrategy()
     {
 

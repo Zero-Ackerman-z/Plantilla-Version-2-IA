@@ -80,5 +80,9 @@ public class Health : MonoBehaviour
     {
         health = healthMax;
     }
+<<<<<<< Updated upstream
 }
 
+=======
+}
+>>>>>>> Stashed changes

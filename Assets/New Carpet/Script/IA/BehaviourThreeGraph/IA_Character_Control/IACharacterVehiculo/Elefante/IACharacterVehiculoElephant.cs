@@ -29,4 +29,27 @@ public class IACharacterVehiculoElephant : IACharacterVehiculo
     {
         base.MoveToEvadEnemy();
     }
+<<<<<<< Updated upstream
+=======
+    //public void MoveToItem()
+    //{
+    //    if (AIEye is IAEyeElephantAttack)
+    //    {
+    //        if (((IAEyeElephantAttack)AIEye).ViewItems != null)
+    //        {
+    //            MoveToPosition(((IAEyeElephantAttack)AIEye).ViewItems.transform.position);
+    //        }
+    //    }
+    //}
+    //public void LookToItem()
+    //{
+    //    if (AIEye is IAEyeElephantAttack)
+    //    {
+    //        if (((IAEyeElephantAttack)AIEye).ViewItems != null)
+    //        {
+    //            LookPosition(((IAEyeElephantAttack)AIEye).ViewItems.transform.position);
+    //        }
+    //    }
+    //}
+>>>>>>> Stashed changes
 }

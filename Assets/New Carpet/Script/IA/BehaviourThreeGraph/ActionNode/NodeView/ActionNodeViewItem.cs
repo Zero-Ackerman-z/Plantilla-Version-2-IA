@@ -5,7 +5,10 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("MyAI/View")]
 public class ActionNodeViewItem : ActionNodeView
 {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public override void OnAwake()
     {
         base.OnAwake();
@@ -17,9 +20,23 @@ public class ActionNodeViewItem : ActionNodeView
             if (((IAEyeCivil)_IACharacterVehiculo.AIEye).ViewItems == null)
                 return TaskStatus.Failure;
         }
+<<<<<<< Updated upstream
 
         return TaskStatus.Success;
     }
 
 
+=======
+        else if (_IACharacterVehiculo.AIEye is IAEyeElephantAttack)
+        {
+            if (((IAEyeElephantAttack)_IACharacterVehiculo.AIEye).ViewItems == null)
+                return TaskStatus.Failure;
+        }
+        else
+        {
+            return TaskStatus.Failure;
+        }
+        return TaskStatus.Success;
+    }
+>>>>>>> Stashed changes
 }

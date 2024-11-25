@@ -10,6 +10,10 @@ public class IACharacterControl : MonoBehaviour
     public Health health { get; set; }
     public IAEyeBase AIEye { get; set; }
     public IAEyeCivil IAEyeCivil { get; set; }
+<<<<<<< Updated upstream
+=======
+    public IAEyeElephantAttack IAEyeElephantAttack { get; set; }
+>>>>>>> Stashed changes
 
     public virtual void LoadComponent()
     {

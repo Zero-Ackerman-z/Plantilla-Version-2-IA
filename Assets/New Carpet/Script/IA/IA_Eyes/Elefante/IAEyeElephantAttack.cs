@@ -8,7 +8,10 @@ public class IAEyeElephantAttack : IAEyeAttack
     {
         LoadComponent();
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     private void Update()
     {
         UpdateScan();
@@ -17,12 +20,18 @@ public class IAEyeElephantAttack : IAEyeAttack
     {
         base.LoadComponent();
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public override void UpdateScan()
     {
         base.UpdateScan();
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     private void OnValidate()
     {
         mainDataView.CreateMesh();

@@ -6,11 +6,29 @@ public class IACharacterVehiculo : IACharacterControl
 {
     protected CalculateDiffuse _CalculateDiffuse;
     protected float speedRotation = 0;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public float RangeWander;
     protected Vector3 positionWander;
     float FrameRate = 0;
     float Rate = 4;
+
+    public virtual void MoveToItem()
+    {
+        if (AIEye.ViewItems != null)
+        {
+            MoveToPosition(AIEye.ViewItems.transform.position);
+        }
+    }
+    public virtual void LookToItem()
+    {
+        if (AIEye.ViewItems != null)
+        {
+            LookPosition(AIEye.ViewItems.transform.position);
+        }
+    }
     public override void LoadComponent()
     {
         base.LoadComponent();
@@ -21,6 +39,15 @@ public class IACharacterVehiculo : IACharacterControl
     {
         if (AIEye.ViewEnemy == null) return;
         Vector3 dir = (AIEye.ViewEnemy.transform.position - transform.position).normalized;
+        Quaternion rot = Quaternion.LookRotation(dir);
+        rot.x = 0;
+        rot.z = 0;
+        transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * 50);
+    }
+    public virtual void LookAllied()
+    {
+        if (AIEye.ViewAllie == null) return;
+        Vector3 dir = (AIEye.ViewAllie.transform.position - transform.position).normalized;
         Quaternion rot = Quaternion.LookRotation(dir);
         rot.x = 0;
         rot.z = 0;
@@ -47,8 +74,11 @@ public class IACharacterVehiculo : IACharacterControl
             LookPosition(posNormal);
         }
     }
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
     public virtual void MoveToPosition(Vector3 pos)
     {
         agent.SetDestination(pos);
@@ -70,7 +100,6 @@ public class IACharacterVehiculo : IACharacterControl
         Vector3 newPosition = transform.position + dir * 5f;
         MoveToPosition(newPosition);
     }
-
     Vector3 RandoWander(Vector3 position, float range)
     {
         Vector3 randP = Random.insideUnitSphere * range;
