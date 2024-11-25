@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class IAEyeCivil : IAEyeBase
 {
-    public Health ViewItem;
-    public void Start()
+    public Health ViewItems;
+    private void Start()
     {
         LoadComponent();
     }
 
-    public void Update()
+    private void Update()
     {
         UpdateScan();
     }
@@ -23,7 +23,7 @@ public class IAEyeCivil : IAEyeBase
         if (health.HurtingMe != null) return;
         ViewAllie = null;
         ViewEnemy = null;
-        ViewItem = null;
+        ViewItems = null;
         Collider[] colliders = Physics.OverlapSphere(transform.position, mainDataView.Distance, mainDataView.Scanlayers);
         CountEnemyView = 0;
         count = colliders.Length;
@@ -52,7 +52,7 @@ public class IAEyeCivil : IAEyeBase
                         float dist = (transform.position - Scanhealth.transform.position).magnitude;
                         if (min_distItem > dist)
                         {
-                            ViewItem = Scanhealth;
+                            ViewItems = Scanhealth;
                             min_dist = dist;
 
                         }
@@ -92,9 +92,9 @@ public class IAEyeCivil : IAEyeBase
             ViewAllie = null;
         }
 
-        if (ViewItem != null && ((ViewItem.IsDead) || (!ViewItem.IsCantView)))
+        if (ViewItems != null && ((ViewItems.IsDead) || (!ViewItems.IsCantView)))
         {
-            ViewItem = null;
+            ViewItems = null;
         }
 
     }

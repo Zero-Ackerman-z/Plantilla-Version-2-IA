@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class IACharacterVehiculo : IACharacterControl
 {
     protected CalculateDiffuse _CalculateDiffuse;
@@ -62,11 +63,6 @@ public class IACharacterVehiculo : IACharacterControl
         if (AIEye.ViewAllie == null) return;
         MoveToPosition(AIEye.ViewAllie.transform.position);
     }
-    public virtual void MoveToItem()
-    {
-        if (IAEyeCivil.ViewItem == null) return;
-        MoveToPosition(IAEyeCivil.ViewItem.transform.position);
-    }
     public virtual void MoveToEvadEnemy()
     {
         if (AIEye.ViewEnemy == null) return;
@@ -98,7 +94,6 @@ public class IACharacterVehiculo : IACharacterControl
             positionWander = RandoWander(transform.position, RangeWander);
         }
         FrameRate += Time.deltaTime;
-
 
         MoveToPosition(positionWander);
     }

@@ -19,6 +19,13 @@ public class IACharacterActionsCivil : IACharacterActions
     private void OnTriggerEnter(Collider other)
     {
         AttemptPickUp(other);
+        if ((maskItem.value & (1 << other.gameObject.layer)) != 0)
+        {
+
+            this.health.health += other.gameObject.GetComponent<HealthItem>().health;
+            other.gameObject.GetComponent<HealthItem>().health = 0;
+            Destroy(other.gameObject);
+        }
     }
 
     public void AttemptPickUp(Collider other)
@@ -33,4 +40,3 @@ public class IACharacterActionsCivil : IACharacterActions
         }
     }
 }
-
