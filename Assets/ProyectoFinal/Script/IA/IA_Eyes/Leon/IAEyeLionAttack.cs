@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAEyeLionAttack : IAEyeBase
+public class IAEyeLionAttack : IAEyeAttack
 {
-    public DataView AttackDataView = new DataView();
 
+    private void Start()
+    {
+        LoadComponent();
+    }
+
+    private void Update()
+    {
+        UpdateScan();
+    }
     public override void LoadComponent()
     {
         base.LoadComponent();
@@ -15,14 +23,19 @@ public class IAEyeLionAttack : IAEyeBase
     public override void UpdateScan()
     {
         base.UpdateScan();
-        if (ViewEnemy != null)
-            AttackDataView.IsInSight(ViewEnemy.AimOffset);
-        else
-        {
-            AttackDataView.Sight = false;
-            mainDataView.Sight = false;
-        }
+
 
     }
 
+    private void OnValidate()
+    {
+        mainDataView.CreateMesh();
+        AttackDataView.CreateMesh();
+
+    }
+    private void OnDrawGizmos()
+    {
+        mainDataView.OnDrawGizmos();
+        AttackDataView.OnDrawGizmos();
+    }
 }

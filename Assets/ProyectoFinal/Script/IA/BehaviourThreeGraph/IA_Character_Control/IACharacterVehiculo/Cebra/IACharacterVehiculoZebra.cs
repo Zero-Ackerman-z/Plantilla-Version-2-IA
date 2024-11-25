@@ -14,6 +14,10 @@ public class IACharacterVehiculoZebra : IACharacterVehiculo
     {
         base.LoadComponent();
     }
+    public void MoveToItem()
+    {
+        base.MoveToItem();
+    }
 
     public override void MoveToPosition(Vector3 pos)
     {

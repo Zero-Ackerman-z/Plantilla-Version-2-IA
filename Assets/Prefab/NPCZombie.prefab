@@ -178,7 +178,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411760507778422215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9b9805593b186442b75d1380891c580, type: 3}
   m_Name: 
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411760507778422215}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85a237433590b274a8d4d10beb724c73, type: 3}
   m_Name: 
@@ -268,7 +268,6 @@ MonoBehaviour:
   AimOffset: {fileID: 411760508231922177}
   ViewEnemy: {fileID: 0}
   ViewAllie: {fileID: 0}
-  ViewItem: {fileID: 0}
   AttackDataView:
     angle: 52.4
     height: 2.18
@@ -456,7 +455,37 @@ MonoBehaviour:
       m_RotationOrder: 4
     F_y: 0
     Singleton: 5
+  rapido:
+    Functioncurves:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    F_y: 0
+    Singleton: 0
+  normal:
+    Functioncurves:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    F_y: 0
+    Singleton: 0
+  lento:
+    Functioncurves:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    F_y: 0
+    Singleton: 0
   speedRotation: 0
+  speedFactor: 0
+  distanceFactor: 0
+  distanceSpeed: 0
   DistanceRay: 8
   pointSensor: {fileID: 411760508231922177}
   mask:

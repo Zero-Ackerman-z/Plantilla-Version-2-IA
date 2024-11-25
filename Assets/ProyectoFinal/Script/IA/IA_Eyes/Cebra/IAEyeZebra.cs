@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IAEyeZebra : IAEyeBase
 {
-    public Health ViewGrass;
+    public Health ViewItem;
     public void Start()
     {
         LoadComponent();
@@ -23,7 +23,7 @@ public class IAEyeZebra : IAEyeBase
         if (health.HurtingMe != null) return;
         ViewAllie = null;
         ViewEnemy = null;
-        ViewGrass = null;
+        ViewItem = null;
         Collider[] colliders = Physics.OverlapSphere(transform.position, mainDataView.Distance, mainDataView.Scanlayers);
         CountEnemyView = 0;
         count = colliders.Length;
@@ -52,7 +52,7 @@ public class IAEyeZebra : IAEyeBase
                         float dist = (transform.position - Scanhealth.transform.position).magnitude;
                         if (min_distItem > dist)
                         {
-                            ViewGrass = Scanhealth;
+                            ViewItem = Scanhealth;
                             min_dist = dist;
 
                         }
@@ -92,9 +92,9 @@ public class IAEyeZebra : IAEyeBase
             ViewAllie = null;
         }
 
-        if (ViewGrass != null && ((ViewGrass.IsDead) || (!ViewGrass.IsCantView)))
+        if (ViewItem != null && ((ViewItem.IsDead) || (!ViewItem.IsCantView)))
         {
-            ViewGrass = null;
+            ViewItem = null;
         }
 
     }

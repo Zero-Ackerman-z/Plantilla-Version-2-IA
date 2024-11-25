@@ -15,9 +15,5 @@ public class IACharacterActionsZebra : IACharacterActions
     {
         base.LoadComponent();
     }
-
-    
-
-  
 }
 

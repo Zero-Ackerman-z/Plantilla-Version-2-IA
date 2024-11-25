@@ -13,8 +13,9 @@ public class ActionNodeViewItem : ActionNodeView
 
     public override TaskStatus OnUpdate()
     {
-        if (_IACharacterVehiculo.IAEyeCivil.ViewItem != null)
-            return TaskStatus.Success; 
+        
+        if (_IACharacterVehiculo.IAEyeZebra.ViewItem != null)
+            return TaskStatus.Success;
 
         return TaskStatus.Failure; 
     }
