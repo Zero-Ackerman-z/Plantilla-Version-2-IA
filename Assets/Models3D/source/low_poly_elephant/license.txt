@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low poly elephant
+* source:	https://sketchfab.com/3d-models/low-poly-elephant-84fd98c561464b1ba5d3dd48ab161b9c
+* author:	MrEliptik (https://sketchfab.com/mreliptik)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low poly elephant" (https://sketchfab.com/3d-models/low-poly-elephant-84fd98c561464b1ba5d3dd48ab161b9c) by MrEliptik (https://sketchfab.com/mreliptik) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

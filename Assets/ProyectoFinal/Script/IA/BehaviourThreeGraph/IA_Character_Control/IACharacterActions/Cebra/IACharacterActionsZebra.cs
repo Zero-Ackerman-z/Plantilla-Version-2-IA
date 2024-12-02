@@ -15,5 +15,29 @@ public class IACharacterActionsZebra : IACharacterActions
     {
         base.LoadComponent();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        AttemptPickUp(other);
+        if ((maskItem.value & (1 << other.gameObject.layer)) != 0)
+        {
+            this.health.health += other.gameObject.GetComponent<HealthItem>().health;
+            other.gameObject.GetComponent<HealthItem>().health = 0;
+            Destroy(other.gameObject);
+        }
+    }
+    public void AttemptPickUp(Collider other)
+    {
+        if ((maskItem.value & (1 << other.gameObject.layer)) != 0 &&
+            other.gameObject.GetComponent<HealthItem>() != null)
+        {
+            HealthItem healthItem = other.gameObject.GetComponent<HealthItem>();
+            this.health.health += healthItem.health;
+            healthItem.health = 0;
+            Destroy(other.gameObject);
+        }
+    }
 }
+
+
+
 

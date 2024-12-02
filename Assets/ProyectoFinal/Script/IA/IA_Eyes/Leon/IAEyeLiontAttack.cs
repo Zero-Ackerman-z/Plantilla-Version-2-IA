@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAEyeLionAttack : IAEyeAttack
+public class IAEyeLiontAttack : IAEyeAttack
 {
+
 
     private void Start()
     {
         LoadComponent();
     }
-
     private void Update()
     {
         UpdateScan();
@@ -18,20 +18,14 @@ public class IAEyeLionAttack : IAEyeAttack
     {
         base.LoadComponent();
     }
-
-
     public override void UpdateScan()
     {
         base.UpdateScan();
-
-
     }
-
     private void OnValidate()
     {
         mainDataView.CreateMesh();
         AttackDataView.CreateMesh();
-
     }
     private void OnDrawGizmos()
     {

@@ -5,8 +5,6 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("MyAI/View")]
 public class ActionNodeViewEnemy : ActionNodeView
 {
-     
-
     public override void OnStart()
     {
         base.OnStart();
@@ -18,6 +16,4 @@ public class ActionNodeViewEnemy : ActionNodeView
 
         return TaskStatus.Success;
     }
-
-
 }

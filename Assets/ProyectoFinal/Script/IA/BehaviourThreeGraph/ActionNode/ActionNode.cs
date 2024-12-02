@@ -5,7 +5,6 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("MyAI/BaseClass")]
 public class ActionNode : Action
 {
-
     protected IACharacterVehiculo _IACharacterVehiculo;
     protected IACharacterActions _IACharacterActions;
     protected UnitGame _UnitGame;
@@ -16,6 +15,4 @@ public class ActionNode : Action
         _IACharacterActions = GetComponent<IACharacterActions>();
         _UnitGame = _IACharacterVehiculo.health._UnitGame;
     }
-
-     
 }

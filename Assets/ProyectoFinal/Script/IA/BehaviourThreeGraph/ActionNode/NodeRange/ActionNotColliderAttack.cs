@@ -21,6 +21,4 @@ public class ActionNotColliderAttack : ActionNodeRange
 
         return TaskStatus.Failure;
     }
-
-
 }

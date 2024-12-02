@@ -5,8 +5,6 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("MyAI/Action")]
 public class ActionNodeAttack : ActionNodeAction
 {
-     
-
     public override void OnStart()
     {
         base.OnStart();
@@ -19,35 +17,42 @@ public class ActionNodeAttack : ActionNodeAction
         SwitchUnit();
 
         return TaskStatus.Success;
-
     }
     void SwitchUnit()
     {
-
-
         switch (_UnitGame)
         {
-            case UnitGame.Zombie:
-                if (_IACharacterActions is IACharacterActionsZombie)
-                {
-                    ((IACharacterActionsZombie)_IACharacterActions).Attack();
-                }
+            //case UnitGame.Zombie:
+            //    if (_IACharacterActions is IACharacterActionsZombie)
+            //    {
+            //        ((IACharacterActionsZombie)_IACharacterActions).Attack();
+            //    }
+            //    break;
 
-                break;
-            case UnitGame.Soldier:
-                if (_IACharacterActions is IACharacterActionsSoldier)
-                {
-                    ((IACharacterActionsSoldier)_IACharacterActions).Attack();
-                }
+            //case UnitGame.Soldier:
+            //    if (_IACharacterActions is IACharacterActionsSoldier)
+            //    {
+            //        ((IACharacterActionsSoldier)_IACharacterActions).Attack();
+            //    }
+            //    break;
 
+            case UnitGame.Elephant:
+                if (_IACharacterActions is IACharacterActionsElephant)
+                {
+                    ((IACharacterActionsElephant)_IACharacterActions).Attack();
+                }
                 break;
+            case UnitGame.Lion:
+                if (_IACharacterActions is IACharacterActionsLion)
+                {
+                    ((IACharacterActionsLion)_IACharacterActions).Attack();
+                }
+                break;
+
             case UnitGame.None:
                 break;
             default:
                 break;
         }
-
-
-
     }
 }

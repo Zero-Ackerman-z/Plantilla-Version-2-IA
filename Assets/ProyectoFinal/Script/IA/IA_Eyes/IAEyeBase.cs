@@ -201,10 +201,13 @@ public class DataView : DataViewBase
 
 public class IAEyeBase : MonoBehaviour
 {
+    public Health ViewItems;
+    public Health ViewEnemy;
+    public Health ViewAllie;
     protected int count = 0;
-    //protected Collider[] colliders = new Collider[10];
+    // protected Collider[] colliders = new Collider[10];
     public DataView mainDataView = new DataView();
-    public DataView RadioActionDataView = new DataView();
+    public DataView RadioActionDataView = new DataView();   
     public int CountEnemyView = 0;
     #region Rate
     protected int index = 0;
@@ -220,8 +223,6 @@ public class IAEyeBase : MonoBehaviour
 
     public bool IsDrawGizmo = false;
     public Transform AimOffset;
-    public Health ViewEnemy;
-    public Health ViewAllie;//{ get; set; }
 
     public Vector3 Target { get; set; }
 
@@ -325,39 +326,64 @@ public class IAEyeBase : MonoBehaviour
     public virtual void Scan()
     {
         if (health.HurtingMe != null) return;
+
         ViewAllie = null;
         ViewEnemy = null;
+        ViewItems = null;  // Resetear los �tems detectados
+
+        // Obtener los colliders dentro del rango de visi�n
         Collider[] colliders = Physics.OverlapSphere(transform.position, mainDataView.Distance, mainDataView.Scanlayers);
         CountEnemyView = 0;
         count = colliders.Length;
 
-
-        float min_dist = 100000000f;
-
+        // Variables para mantener el control de la distancia m�nima
+        float min_dist = 10000000000f;
+        float min_distItem = float.MaxValue; // Usamos una distancia para los �tems
+        Debug.Log("Ejecutando");
         for (int i = 0; i < count; i++)
         {
-
             GameObject obj = colliders[i].gameObject;
 
+            // Comprobamos si no es el mismo objeto (esto evita que el objeto se vea a s� mismo)
             if (this.IsNotIsThis(this.gameObject, obj))
             {
-
                 Health Scanhealth = obj.GetComponent<Health>();
+                Debug.Log("no es el mismo obj");
+
+                // Si el objeto tiene un componente Health y est� activo
                 if (Scanhealth != null &&
                     obj.activeSelf &&
                     !Scanhealth.IsDead &&
-                    Scanhealth.IsCantView &&
-                    mainDataView.IsInSight(Scanhealth.AimOffset))
+                    Scanhealth.IsCantView &&  // Asegura que el objeto no est� bloqueado visualmente
+                    mainDataView.IsInSight(Scanhealth.AimOffset)) // Verificamos si est� en l�nea de visi�n
+                    Debug.Log("es un health");
                 {
-                    ExtractViewEnemyViewAllie(ref min_dist, Scanhealth);
+                    // Si el objeto es un HealthItem, lo registramos
+                    if (Scanhealth is HealthItem)
+                    {
+                        float dist = (transform.position - Scanhealth.transform.position).magnitude;
+                        Debug.Log("Es un item");
+                        // Si la distancia al �tem es menor que la m�nima registrada, lo guardamos
+                        if (min_distItem > dist)
+                        {
+
+                            Debug.Log("guardado");
+                            // Si la distancia al �tem es menor que la m�nima registrada, lo guardamos
+                            if (min_distItem > dist)
+                            {
+                                ViewItems = Scanhealth;
+                                min_distItem = dist;  // Actualizamos la distancia m�nima
+                            }
+                        }
+                        else
+                        {
+                            // Si no es un �tem, verificamos si es un enemigo o aliado
+                            ExtractViewEnemyViewAllie(ref min_dist, Scanhealth);
+                        }
+                    }
                 }
-
             }
-
-
-
         }
-
     }
 
     public void ExtractViewEnemyViewAllie(ref float min_dist, Health _health)
@@ -403,5 +429,3 @@ public class IAEyeBase : MonoBehaviour
     }
 
 }
-
-

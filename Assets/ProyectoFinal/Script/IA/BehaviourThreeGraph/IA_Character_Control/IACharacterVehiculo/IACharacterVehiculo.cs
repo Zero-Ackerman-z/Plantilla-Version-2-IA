@@ -1,22 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class IACharacterVehiculo : IACharacterControl
 {
-    protected LogicDiffuse _LogicDiffuse;
+   // protected CalculateDiffuse _CalculateDiffuse;
     protected float speedRotation = 0;
-    protected float movementSpeed = 0;
-    protected float distanceSpeed = 0;
-
     public float RangeWander;
     protected Vector3 positionWander;
     float FrameRate = 0;
     float Rate = 4;
+
+    public virtual void MoveToItem()
+    {
+        if (AIEye.ViewItems != null)
+        {
+            MoveToPosition(AIEye.ViewItems.transform.position);
+        }
+    }
+    public virtual void LookToItem()
+    {
+        if (AIEye.ViewItems != null)
+        {
+            LookPosition(AIEye.ViewItems.transform.position);
+        }
+    }
     public override void LoadComponent()
     {
         base.LoadComponent();
         positionWander = RandoWander(transform.position, RangeWander);
-        _LogicDiffuse = GetComponent<LogicDiffuse>();
+       // _CalculateDiffuse = GetComponent<CalculateDiffuse>();
     }
     public virtual void LookEnemy()
     {
@@ -57,7 +70,6 @@ public class IACharacterVehiculo : IACharacterControl
     //        LookPosition(posNormal);
     //    }
     //}
-
     public virtual void MoveToPosition(Vector3 pos)
     {
         agent.SetDestination(pos);
@@ -65,32 +77,13 @@ public class IACharacterVehiculo : IACharacterControl
     public virtual void MoveToEnemy()
     {
         if (AIEye.ViewEnemy == null) return;
-
-        distanceSpeed = (transform.position - AIEye.ViewEnemy.transform.position).magnitude;
-
-        
-
-        movementSpeed = _LogicDiffuse.SpeedDependDistanceEnemy.CalculateFuzzy(distanceSpeed);
-        agent.speed = movementSpeed;  
-
-        speedRotation = _LogicDiffuse.SpeedRotation.CalculateFuzzy(distanceSpeed);
-
         MoveToPosition(AIEye.ViewEnemy.transform.position);
     }
-
     public virtual void MoveToAllied()
     {
-        if (IAEyeZebra.ViewAllie == null) return;
-        MoveToPosition(IAEyeZebra.ViewAllie.transform.position);
+        if (AIEye.ViewAllie == null) return;
+        MoveToPosition(AIEye.ViewAllie.transform.position);
     }
-    public virtual void MoveToItem()
-    {
-        if (IAEyeCivil.ViewItem == null) return;
-        MoveToPosition(IAEyeCivil.ViewItem.transform.position); 
-        if (IAEyeZebra.ViewItem == null) return;
-        MoveToPosition(IAEyeZebra.ViewItem.transform.position);
-    }
-  
     public virtual void MoveToEvadEnemy()
     {
         if (AIEye.ViewEnemy == null) return;
@@ -98,7 +91,6 @@ public class IACharacterVehiculo : IACharacterControl
         Vector3 newPosition = transform.position + dir * 5f;
         MoveToPosition(newPosition);
     }
-
     Vector3 RandoWander(Vector3 position, float range)
     {
         Vector3 randP = Random.insideUnitSphere * range;
@@ -122,7 +114,6 @@ public class IACharacterVehiculo : IACharacterControl
             positionWander = RandoWander(transform.position, RangeWander);
         }
         FrameRate += Time.deltaTime;
-
 
         MoveToPosition(positionWander);
     }

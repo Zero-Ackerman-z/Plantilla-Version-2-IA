@@ -28,9 +28,7 @@ MonoBehaviour:
         Follow Enemy","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(782.1901,187.442749)"},"ID":10,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"ActionNodeViewEnemy","NodeData":{"Offset":"(-124.2854,210)"},"ID":11,"Name":"Action
         Node View Enemy","Instant":true},{"Type":"ActionColliderAttack","NodeData":{"Offset":"(45.8977051,198.823242)"},"ID":12,"Name":"Action
         Collider Attack","Instant":true},{"Type":"ActionNodeAttack","NodeData":{"Offset":"(195.2309,198.823242)"},"ID":13,"Name":"Action
-        Node Attack","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1323.58582,217.676514)"},"ID":14,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"None","Children":[{"Type":"ActionNotColliderAttack","NodeData":{"Offset":"(-1.07702446,176.323242)"},"ID":15,"Name":"Action
-        Not Collider Attack","Instant":true},{"Type":"ActionFolloAllie","NodeData":{"Offset":"(147.538254,176.323242)"},"ID":16,"Name":"Action
-        Follo Allie","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1735.83423,251.026428)"},"ID":17,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(-47.32642,202.4771)"},"ID":18,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]}]}]}}'
+        Node Attack","Instant":true}]}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

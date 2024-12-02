@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAEyeElephantAttack : MonoBehaviour
+public class IAEyeElephantAttack : IAEyeAttack
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        LoadComponent();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        UpdateScan();
+    }
+    public override void LoadComponent()
+    {
+        base.LoadComponent();
+    }
+    public override void UpdateScan()
+    {
+        base.UpdateScan();
+    }
+    private void OnValidate()
+    {
+        mainDataView.CreateMesh();
+        AttackDataView.CreateMesh();
+    }
+    private void OnDrawGizmos()
+    {
+        mainDataView.OnDrawGizmos();
+        AttackDataView.OnDrawGizmos();
     }
 }

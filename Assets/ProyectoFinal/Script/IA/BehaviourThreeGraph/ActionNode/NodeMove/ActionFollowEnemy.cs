@@ -17,12 +17,9 @@ public class ActionFollowEnemy : ActionNodeVehicle
         SwitchUnit();
 
         return TaskStatus.Success;
-
     }
     void SwitchUnit()
     {
-
-
         switch (_UnitGame)
         {
             case UnitGame.Zombie:
@@ -31,8 +28,8 @@ public class ActionFollowEnemy : ActionNodeVehicle
                     ((IACharacterVehiculoZombie)_IACharacterVehiculo).MoveToEnemy();
                     ((IACharacterVehiculoZombie)_IACharacterVehiculo).LookEnemy();
                 }
-
                 break;
+
             case UnitGame.Soldier:
                 if (_IACharacterVehiculo is IACharacterVehiculoSoldier)
                 {
@@ -40,14 +37,34 @@ public class ActionFollowEnemy : ActionNodeVehicle
                     ((IACharacterVehiculoSoldier)_IACharacterVehiculo).LookEnemy();
                 }
                 break;
+
+            case UnitGame.Elephant:
+                if (_IACharacterVehiculo is IACharacterVehiculoElephant)
+                {
+                    ((IACharacterVehiculoElephant)_IACharacterVehiculo).MoveToEnemy();
+                    ((IACharacterVehiculoElephant)_IACharacterVehiculo).LookEnemy();
+                }
+                break;
+            case UnitGame.Lion:
+                if (_IACharacterVehiculo is IACharacterVehiculoLion)
+                {
+                    ((IACharacterVehiculoLion)_IACharacterVehiculo).MoveToEnemy();
+                    ((IACharacterVehiculoLion)_IACharacterVehiculo).LookEnemy();
+                }
+                break;
+            case UnitGame.Zebra:
+                if (_IACharacterVehiculo is IACharacterVehiculoZebra)
+                {
+                    ((IACharacterVehiculoZebra)_IACharacterVehiculo).MoveToEnemy();
+                    ((IACharacterVehiculoZebra)_IACharacterVehiculo).LookEnemy();
+                }
+                break;
+
             case UnitGame.None:
                 break;
+
             default:
                 break;
         }
-
-
-
     }
-
 }

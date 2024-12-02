@@ -26,10 +26,6 @@ public class ActionColliderAttack : ActionNodeRange
             if (_IAEyeAttack != null && _IAEyeAttack.AttackDataView.Sight)
                 return TaskStatus.Success;
         }
-        
-
         return TaskStatus.Failure;
     }
-
-
 }

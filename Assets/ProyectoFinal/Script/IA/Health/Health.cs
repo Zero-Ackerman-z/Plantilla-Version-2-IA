@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public enum TypeAgent { A, B, C, D, E, F, G, H }
+public enum TypeAgent { A, B, C, D, E }
 public enum UnitGame
 {
     Zombie,
     Soldier,
     Civil,
-    Zebra,
-    Lion,
-    Elephant,
     Item,
-    Grass,
+    Lion,
+    Zebra,
+    Elephant,
     None
 }
 public class Health : MonoBehaviour
@@ -66,9 +64,7 @@ public class Health : MonoBehaviour
             if (enemy != null)
                 HurtingMeroutine = StartCoroutine(HurtingMeActive(enemy));
         }
-
     }
-
 
     public void UpdateHealthBar()
     {
@@ -82,10 +78,5 @@ public class Health : MonoBehaviour
     public virtual void LoadComponent()
     {
         health = healthMax;
-
-
     }
-
-
 }
-

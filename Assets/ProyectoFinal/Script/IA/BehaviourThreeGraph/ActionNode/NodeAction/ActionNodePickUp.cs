@@ -22,7 +22,6 @@ public class ActionNodePickUp : ActionNodeAction
         {
             return TaskStatus.Success; 
         }
-
         return TaskStatus.Failure; 
     }
 
@@ -31,7 +30,10 @@ public class ActionNodePickUp : ActionNodeAction
         Collider[] itemsInRange = Physics.OverlapSphere(transform.position, 2f, maskItem);
         foreach (Collider item in itemsInRange)
         {
-            ((IACharacterActionsCivil)_IACharacterActions).AttemptPickUp(item);
+            ((IACharacterActionsElephant)_IACharacterActions).AttemptPickUp(item);
+            ((IACharacterActionsLion)_IACharacterActions).AttemptPickUp(item);
+            ((IACharacterActionsZebra)_IACharacterActions).AttemptPickUp(item);
+
             return true; 
         }
         return false; 

@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
 [TaskCategory("MyAI/View")]
 public class ActionNodeNotViewItem : ActionNodeView
 {
-    public override void OnStart()
+    public override void OnAwake()
     {
-        base.OnStart();
+        base.OnAwake();
     }
-
     public override TaskStatus OnUpdate()
     {
-        if (_IACharacterVehiculo.IAEyeCivil.ViewItem == null)
-            return TaskStatus.Success;
-
-        return TaskStatus.Failure; 
+        if (_IACharacterVehiculo.AIEye is IAEyeCivil)
+        {
+            if (((IAEyeCivil)_IACharacterVehiculo.AIEye).ViewItems == null)
+                return TaskStatus.Success;
+        }
+        return TaskStatus.Failure;
     }
 }
