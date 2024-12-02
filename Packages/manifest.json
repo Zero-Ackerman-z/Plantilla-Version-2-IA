@@ -4,6 +4,10 @@
     "com.unity.cinemachine": "2.9.7",
     "com.unity.inputsystem": "1.6.3",
     "com.unity.render-pipelines.universal": "14.0.8",
+<<<<<<< Updated upstream
+=======
+    "org.khronos.unitygltf": "https://github.com/KhronosGroup/UnityGLTF.git",
+>>>>>>> Stashed changes
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

@@ -202,6 +202,11 @@ public class DataView : DataViewBase
 public class IAEyeBase : MonoBehaviour
 {
     public Health ViewItems;
+<<<<<<< Updated upstream
+=======
+    public Health ViewEnemy;
+    public Health ViewAllie;
+>>>>>>> Stashed changes
     protected int count = 0;
     // protected Collider[] colliders = new Collider[10];
     public DataView mainDataView = new DataView();
@@ -221,8 +226,11 @@ public class IAEyeBase : MonoBehaviour
 
     public bool IsDrawGizmo = false;
     public Transform AimOffset;
+<<<<<<< Updated upstream
     public Health ViewEnemy;
     public Health ViewAllie;// { get; set; }
+=======
+>>>>>>> Stashed changes
 
     public Vector3 Target { get; set; }
 
@@ -339,7 +347,10 @@ public class IAEyeBase : MonoBehaviour
         // Variables para mantener el control de la distancia mínima
         float min_dist = 10000000000f;
         float min_distItem = float.MaxValue; // Usamos una distancia para los ítems
+<<<<<<< Updated upstream
         Debug.Log("Ejecutando");
+=======
+>>>>>>> Stashed changes
         for (int i = 0; i < count; i++)
         {
             GameObject obj = colliders[i].gameObject;
@@ -348,7 +359,10 @@ public class IAEyeBase : MonoBehaviour
             if (this.IsNotIsThis(this.gameObject, obj))
             {
                 Health Scanhealth = obj.GetComponent<Health>();
+<<<<<<< Updated upstream
                 Debug.Log("no es el mismo obj");
+=======
+>>>>>>> Stashed changes
 
                 // Si el objeto tiene un componente Health y está activo
                 if (Scanhealth != null &&
@@ -356,18 +370,27 @@ public class IAEyeBase : MonoBehaviour
                     !Scanhealth.IsDead &&
                     Scanhealth.IsCantView &&  // Asegura que el objeto no esté bloqueado visualmente
                     mainDataView.IsInSight(Scanhealth.AimOffset)) // Verificamos si está en línea de visión
+<<<<<<< Updated upstream
                     Debug.Log("es un health");
+=======
+>>>>>>> Stashed changes
                 {
                     // Si el objeto es un HealthItem, lo registramos
                     if (Scanhealth is HealthItem)
                     {
                         float dist = (transform.position - Scanhealth.transform.position).magnitude;
+<<<<<<< Updated upstream
                         Debug.Log("Es un item");
                         // Si la distancia al ítem es menor que la mínima registrada, lo guardamos
                         if (min_distItem > dist)
                         {
 
                             Debug.Log("guardado");
+=======
+                        // Si la distancia al ítem es menor que la mínima registrada, lo guardamos
+                        if (min_distItem > dist)
+                        {
+>>>>>>> Stashed changes
                             ViewItems = Scanhealth;
                             min_distItem = dist;  // Actualizamos la distancia mínima
                         }

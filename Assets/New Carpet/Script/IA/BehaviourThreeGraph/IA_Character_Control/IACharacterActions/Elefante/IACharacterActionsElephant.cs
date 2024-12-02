@@ -44,7 +44,10 @@ public class IACharacterActionsElephant : IACharacterActions
             Destroy(other.gameObject);
         }
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public void AttemptPickUp(Collider other)
     {
         if ((maskItem.value & (1 << other.gameObject.layer)) != 0 &&
