@@ -6,7 +6,6 @@ using BehaviorDesigner.Runtime.Tasks;
 public class ActionNodeNotViewEnemy : ActionNodeView
 {
      
-
     public override void OnStart()
     {
         base.OnStart();

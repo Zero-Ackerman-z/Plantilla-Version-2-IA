@@ -202,7 +202,7 @@ public class DataView : DataViewBase
 public class IAEyeBase : MonoBehaviour
 {
     protected int count = 0;
-    // protected Collider[] colliders = new Collider[10];
+    //protected Collider[] colliders = new Collider[10];
     public DataView mainDataView = new DataView();
     public DataView RadioActionDataView = new DataView();
     public int CountEnemyView = 0;
@@ -221,7 +221,7 @@ public class IAEyeBase : MonoBehaviour
     public bool IsDrawGizmo = false;
     public Transform AimOffset;
     public Health ViewEnemy;
-    public Health ViewAllie;// { get; set; }
+    public Health ViewAllie;//{ get; set; }
 
     public Vector3 Target { get; set; }
 
@@ -332,7 +332,7 @@ public class IAEyeBase : MonoBehaviour
         count = colliders.Length;
 
 
-        float min_dist = 10000000000f;
+        float min_dist = 100000000f;
 
         for (int i = 0; i < count; i++)
         {

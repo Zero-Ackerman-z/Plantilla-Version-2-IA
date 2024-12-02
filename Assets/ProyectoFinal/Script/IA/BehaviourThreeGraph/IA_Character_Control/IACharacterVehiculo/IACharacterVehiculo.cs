@@ -80,8 +80,8 @@ public class IACharacterVehiculo : IACharacterControl
 
     public virtual void MoveToAllied()
     {
-        if (AIEye.ViewAllie == null) return;
-        MoveToPosition(AIEye.ViewAllie.transform.position);
+        if (IAEyeZebra.ViewAllie == null) return;
+        MoveToPosition(IAEyeZebra.ViewAllie.transform.position);
     }
     public virtual void MoveToItem()
     {
