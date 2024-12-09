@@ -339,7 +339,6 @@ public class IAEyeBase : MonoBehaviour
         // Variables para mantener el control de la distancia m�nima
         float min_dist = 10000000000f;
         float min_distItem = float.MaxValue; // Usamos una distancia para los �tems
-        Debug.Log("Ejecutando");
         for (int i = 0; i < count; i++)
         {
             GameObject obj = colliders[i].gameObject;
@@ -348,7 +347,6 @@ public class IAEyeBase : MonoBehaviour
             if (this.IsNotIsThis(this.gameObject, obj))
             {
                 Health Scanhealth = obj.GetComponent<Health>();
-                Debug.Log("no es el mismo obj");
 
                 // Si el objeto tiene un componente Health y est� activo
                 if (Scanhealth != null &&
@@ -356,18 +354,14 @@ public class IAEyeBase : MonoBehaviour
                     !Scanhealth.IsDead &&
                     Scanhealth.IsCantView &&  // Asegura que el objeto no est� bloqueado visualmente
                     mainDataView.IsInSight(Scanhealth.AimOffset)) // Verificamos si est� en l�nea de visi�n
-                    Debug.Log("es un health");
                 {
                     // Si el objeto es un HealthItem, lo registramos
                     if (Scanhealth is HealthItem)
                     {
                         float dist = (transform.position - Scanhealth.transform.position).magnitude;
-                        Debug.Log("Es un item");
                         // Si la distancia al �tem es menor que la m�nima registrada, lo guardamos
                         if (min_distItem > dist)
                         {
-
-                            Debug.Log("guardado");
                             // Si la distancia al �tem es menor que la m�nima registrada, lo guardamos
                             if (min_distItem > dist)
                             {
