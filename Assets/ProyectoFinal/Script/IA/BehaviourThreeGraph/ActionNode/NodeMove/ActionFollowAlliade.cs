@@ -37,6 +37,13 @@ public class ActionFollowAlliade : ActionNodeVehicle
                     ((IACharacterVehiculoSoldier)_IACharacterVehiculo).LookEnemy();
                 }
                 break;
+            case UnitGame.Zebra:
+                if (_IACharacterVehiculo is IACharacterVehiculoZebra)
+                {
+                    ((IACharacterVehiculoZebra)_IACharacterVehiculo).MoveToEnemy();
+                    ((IACharacterVehiculoZebra)_IACharacterVehiculo).LookEnemy();
+                }
+                break;
 
             case UnitGame.Elephant:
                 if (_IACharacterVehiculo is IACharacterVehiculoElephant)

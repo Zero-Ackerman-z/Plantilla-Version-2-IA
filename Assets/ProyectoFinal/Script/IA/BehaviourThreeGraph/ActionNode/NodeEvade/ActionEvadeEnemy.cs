@@ -30,6 +30,18 @@ public class ActionEvadeEnemy : ActionNodeVehicle
                     ((IACharacterVehiculoZombie)_IACharacterVehiculo).MoveToEvadEnemy();
                 }
                 break;
+            case UnitGame.Zebra:
+                if (_IACharacterVehiculo is IACharacterVehiculoZebra)
+                {
+                    ((IACharacterVehiculoZebra)_IACharacterVehiculo).MoveToEvadEnemy();
+                }
+                break;
+            case UnitGame.Lion:
+                if (_IACharacterVehiculo is IACharacterVehiculoLion)
+                {
+                    ((IACharacterVehiculoLion)_IACharacterVehiculo).MoveToEvadEnemy();
+                }
+                break;
             case UnitGame.None:
                 break;
             default:

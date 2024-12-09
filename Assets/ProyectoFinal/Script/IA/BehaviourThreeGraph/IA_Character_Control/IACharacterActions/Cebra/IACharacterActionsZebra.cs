@@ -28,12 +28,23 @@ public class IACharacterActionsZebra : IACharacterActions
     public void AttemptPickUp(Collider other)
     {
         if ((maskItem.value & (1 << other.gameObject.layer)) != 0 &&
-            other.gameObject.GetComponent<HealthItem>() != null)
+       other.gameObject.GetComponent<HealthItem>() != null)
         {
             HealthItem healthItem = other.gameObject.GetComponent<HealthItem>();
-            this.health.health += healthItem.health;
-            healthItem.health = 0;
-            Destroy(other.gameObject);
+
+            // Verifica si necesita salud
+            if (this.health.health < this.health.healthMax)
+            {
+                int healthToAdd = Mathf.Min(healthItem.health, this.health.healthMax - this.health.health);
+                this.health.health += healthToAdd;
+
+                // Destruye solo si se usó parte o toda la salud del objeto
+                if (healthToAdd > 0)
+                {
+                    healthItem.health -= healthToAdd;
+                    Destroy(other.gameObject);
+                }
+            }
         }
     }
 }

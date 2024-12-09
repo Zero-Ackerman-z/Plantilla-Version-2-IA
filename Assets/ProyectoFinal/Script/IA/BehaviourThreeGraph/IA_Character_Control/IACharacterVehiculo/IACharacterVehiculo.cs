@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IACharacterVehiculo : IACharacterControl
 {
-   // protected CalculateDiffuse _CalculateDiffuse;
+    protected CalculateDiffuse _CalculateDiffuse;
     protected float speedRotation = 0;
     public float RangeWander;
     protected Vector3 positionWander;
@@ -29,7 +29,7 @@ public class IACharacterVehiculo : IACharacterControl
     {
         base.LoadComponent();
         positionWander = RandoWander(transform.position, RangeWander);
-       // _CalculateDiffuse = GetComponent<CalculateDiffuse>();
+        _CalculateDiffuse = GetComponent<CalculateDiffuse>();
     }
     public virtual void LookEnemy()
     {

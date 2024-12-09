@@ -16,6 +16,11 @@ public class ActionNodeNotViewItem : ActionNodeView
             if (((IAEyeCivil)_IACharacterVehiculo.AIEye).ViewItems == null)
                 return TaskStatus.Success;
         }
+        if (_IACharacterVehiculo.AIEye is IAEyeZebra)
+        {
+            if (((IAEyeZebra)_IACharacterVehiculo.AIEye).ViewItems == null)
+                return TaskStatus.Success;
+        }
         return TaskStatus.Failure;
     }
 }

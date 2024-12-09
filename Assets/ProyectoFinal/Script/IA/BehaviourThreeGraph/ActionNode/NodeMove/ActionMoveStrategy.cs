@@ -35,6 +35,7 @@ public class ActionMoveStrategy : ActionNodeVehicle
                     ((IACharacterVehiculoSoldier)_IACharacterVehiculo).LookEnemy();
                 }
                 break;
+            
             case UnitGame.None:
                 break;
             default:

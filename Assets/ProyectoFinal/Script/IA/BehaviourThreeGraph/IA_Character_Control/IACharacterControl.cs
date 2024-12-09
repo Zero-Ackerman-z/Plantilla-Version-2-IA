@@ -10,7 +10,10 @@ public class IACharacterControl : MonoBehaviour
     public Health health { get; set; }
     public IAEyeBase AIEye { get; set; }
     public IAEyeCivil IAEyeCivil { get; set; }
+    public IAEyeZebra IAEyeZebra { get; set; }
     public IAEyeElephantAttack IAEyeElephantAttack { get; set; }
+    public IAEyeLiontAttack IAEyeLionAttack { get; set; }
+
 
     public virtual void LoadComponent()
     {

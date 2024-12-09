@@ -52,13 +52,7 @@ public class ActionFollowEnemy : ActionNodeVehicle
                     ((IACharacterVehiculoLion)_IACharacterVehiculo).LookEnemy();
                 }
                 break;
-            case UnitGame.Zebra:
-                if (_IACharacterVehiculo is IACharacterVehiculoZebra)
-                {
-                    ((IACharacterVehiculoZebra)_IACharacterVehiculo).MoveToEnemy();
-                    ((IACharacterVehiculoZebra)_IACharacterVehiculo).LookEnemy();
-                }
-                break;
+           
 
             case UnitGame.None:
                 break;

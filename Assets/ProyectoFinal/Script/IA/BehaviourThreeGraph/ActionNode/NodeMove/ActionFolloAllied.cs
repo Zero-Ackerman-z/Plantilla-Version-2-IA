@@ -40,6 +40,13 @@ public class ActionFolloAllie : ActionNodeVehicle
                     ((IACharacterVehiculoZebra)_IACharacterVehiculo).LookAllied();
                 }
                 break;
+            case UnitGame.Elephant:
+                if (_IACharacterVehiculo is IACharacterVehiculoElephant)
+                {
+                    ((IACharacterVehiculoElephant)_IACharacterVehiculo).MoveToAllied();
+                    ((IACharacterVehiculoElephant)_IACharacterVehiculo).LookAllied();
+                }
+                break;
             case UnitGame.None:
                 break;
             default:
