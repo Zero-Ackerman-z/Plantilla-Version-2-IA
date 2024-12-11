@@ -207,7 +207,7 @@ public class IAEyeBase : MonoBehaviour
     protected int count = 0;
     // protected Collider[] colliders = new Collider[10];
     public DataView mainDataView = new DataView();
-    public DataView RadioActionDataView = new DataView();   
+    public DataView RadioActionDataView = new DataView();
     public int CountEnemyView = 0;
     #region Rate
     protected int index = 0;
@@ -329,51 +329,47 @@ public class IAEyeBase : MonoBehaviour
 
         ViewAllie = null;
         ViewEnemy = null;
-        ViewItems = null;  // Resetear los �tems detectados
+        ViewItems = null;  // Resetear los ítems detectados
 
-        // Obtener los colliders dentro del rango de visi�n
+        // Obtener los colliders dentro del rango de visión
         Collider[] colliders = Physics.OverlapSphere(transform.position, mainDataView.Distance, mainDataView.Scanlayers);
         CountEnemyView = 0;
         count = colliders.Length;
 
-        // Variables para mantener el control de la distancia m�nima
+        // Variables para mantener el control de la distancia mínima
         float min_dist = 10000000000f;
-        float min_distItem = float.MaxValue; // Usamos una distancia para los �tems
+        float min_distItem = float.MaxValue; // Usamos una distancia para los ítems
         for (int i = 0; i < count; i++)
         {
             GameObject obj = colliders[i].gameObject;
 
-            // Comprobamos si no es el mismo objeto (esto evita que el objeto se vea a s� mismo)
+            // Comprobamos si no es el mismo objeto (esto evita que el objeto se vea a sí mismo)
             if (this.IsNotIsThis(this.gameObject, obj))
             {
                 Health Scanhealth = obj.GetComponent<Health>();
 
-                // Si el objeto tiene un componente Health y est� activo
+                // Si el objeto tiene un componente Health y está activo
                 if (Scanhealth != null &&
                     obj.activeSelf &&
                     !Scanhealth.IsDead &&
-                    Scanhealth.IsCantView &&  // Asegura que el objeto no est� bloqueado visualmente
-                    mainDataView.IsInSight(Scanhealth.AimOffset)) // Verificamos si est� en l�nea de visi�n
+                    Scanhealth.IsCantView &&  // Asegura que el objeto no esté bloqueado visualmente
+                    mainDataView.IsInSight(Scanhealth.AimOffset)) // Verificamos si está en línea de visión
                 {
                     // Si el objeto es un HealthItem, lo registramos
                     if (Scanhealth is HealthItem)
                     {
                         float dist = (transform.position - Scanhealth.transform.position).magnitude;
-                        // Si la distancia al �tem es menor que la m�nima registrada, lo guardamos
+                        // Si la distancia al ítem es menor que la mínima registrada, lo guardamos
                         if (min_distItem > dist)
                         {
-                            // Si la distancia al �tem es menor que la m�nima registrada, lo guardamos
-                            if (min_distItem > dist)
-                            {
-                                ViewItems = Scanhealth;
-                                min_distItem = dist;  // Actualizamos la distancia m�nima
-                            }
+                            ViewItems = Scanhealth;
+                            min_distItem = dist;  // Actualizamos la distancia mínima
                         }
-                        else
-                        {
-                            // Si no es un �tem, verificamos si es un enemigo o aliado
-                            ExtractViewEnemyViewAllie(ref min_dist, Scanhealth);
-                        }
+                    }
+                    else
+                    {
+                        // Si no es un ítem, verificamos si es un enemigo o aliado
+                        ExtractViewEnemyViewAllie(ref min_dist, Scanhealth);
                     }
                 }
             }

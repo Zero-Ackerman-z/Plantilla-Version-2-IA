@@ -55,12 +55,18 @@ public class Health : MonoBehaviour
 
         if (!IsDead)
         {
-
             if ((health - damage) > 0)
                 health -= damage;
             else
                 health = 0;
+
             UpdateHealthBar();
+
+            if (IsDead)
+            {
+                Destroy(gameObject);
+            }
+
             if (enemy != null)
                 HurtingMeroutine = StartCoroutine(HurtingMeActive(enemy));
         }
