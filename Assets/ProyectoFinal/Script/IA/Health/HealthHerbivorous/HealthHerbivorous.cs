@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class HealthHerbivorous : Health
 {
-    
+    void Start()
+    {
+        base.LoadComponent();
+    }
 }

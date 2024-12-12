@@ -8,5 +8,4 @@ public class HealthZebra : HealthHerbivorous
     {
         base.LoadComponent();
     }
-
 }

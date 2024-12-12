@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class IAEyeLiontAttack : IAEyeAttack
 {
-
-
     private void Start()
     {
         LoadComponent();

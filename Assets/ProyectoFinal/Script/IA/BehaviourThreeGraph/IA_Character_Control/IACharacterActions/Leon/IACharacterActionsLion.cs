@@ -24,11 +24,11 @@ public class IACharacterActionsLion : IACharacterActions
         if (FrameRate > Rate)
         {
             FrameRate = 0;
-            IAEyeElephantAttack _IAEyeElephantAttack = ((IAEyeElephantAttack)AIEye);
+            IAEyeLiontAttack _IAEyeLiontAttack = ((IAEyeLiontAttack)AIEye);
 
-            if (_IAEyeElephantAttack != null && _IAEyeElephantAttack.ViewEnemy != null)
+            if (_IAEyeLiontAttack != null && _IAEyeLiontAttack.ViewEnemy != null)
             {
-                _IAEyeElephantAttack.ViewEnemy.Damage(damageEnemy, health);
+                _IAEyeLiontAttack.ViewEnemy.Damage(damageEnemy, health);
             }
         }
         FrameRate += Time.deltaTime;
