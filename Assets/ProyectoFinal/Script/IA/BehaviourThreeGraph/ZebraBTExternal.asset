@@ -26,14 +26,14 @@ MonoBehaviour:
         Wander","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-492.76,160)"},"ID":7,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"ActionNodeViewItem","NodeData":{"Offset":"(-180,150)"},"ID":8,"Name":"Action
         Node View Item","Instant":true},{"Type":"ActionNodeNotViewEnemy","NodeData":{"Offset":"(0,150)"},"ID":9,"Name":"Action
         Node Not View Enemy","Instant":true},{"Type":"ActionFollowItem","NodeData":{"Offset":"(160,150)"},"ID":10,"Name":"Action
-        Follow Item","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-14.6161041,358.246216)"},"ID":11,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"None","Children":[{"Type":"ActionNodeViewItem","NodeData":{"Offset":"(-279.965,211.286377)"},"ID":12,"Name":"Action
+        Follow Item","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-14.6161041,228.880112)"},"ID":11,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"ActionNodeViewItem","NodeData":{"Offset":"(-279.965,211.286377)"},"ID":12,"Name":"Action
         Node View Item","Instant":true},{"Type":"ActionNodeViewEnemy","NodeData":{"Offset":"(-116.901176,206.823486)"},"ID":13,"Name":"Action
         Node View Enemy","Instant":true},{"Type":"ActionNotColliderRadioAction","NodeData":{"Offset":"(66.3855,211.204834)"},"ID":14,"Name":"Action
         Not Collider Radio Action","Instant":true},{"Type":"ActionEvadeEnemy","NodeData":{"Offset":"(248.62796,211.503113)"},"ID":15,"Name":"Action
         Evade Enemy","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(611.3947,189.880737)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"ActionNodeViewEnemy","NodeData":{"Offset":"(-184.756378,127.667053)"},"ID":17,"Name":"Action
         Node View Enemy","Instant":true},{"Type":"ActionColliderRadioAction","NodeData":{"Offset":"(2.99747181,127.407104)"},"ID":18,"Name":"Action
         Collider Radio Action","Instant":true},{"Type":"ActionEvadeEnemy","NodeData":{"Offset":"(174.195343,134.8612)"},"ID":19,"Name":"Action
-        Evade Enemy","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1115.24707,174.343323)"},"ID":20,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"None","Children":[{"Type":"ActionNodeViewEnemy","NodeData":{"Offset":"(-115.805504,153.00769)"},"ID":21,"Name":"Action
+        Evade Enemy","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1115.24707,174.343323)","Collapsed":true},"ID":20,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"None","Children":[{"Type":"ActionNodeViewEnemy","NodeData":{"Offset":"(-115.805504,153.00769)"},"ID":21,"Name":"Action
         Node View Enemy","Instant":true},{"Type":"ActionNotColliderRadioAction","NodeData":{"Offset":"(3.30754375,250.099625)"},"ID":22,"Name":"Action
         Not Collider Radio Action","Instant":true},{"Type":"ActionMoveStrategy","NodeData":{"Offset":"(123.145996,140.7138)"},"ID":23,"Name":"Action
         Move Strategy","Instant":true}]}]}]}}'

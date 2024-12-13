@@ -38,7 +38,7 @@ public class IACharacterVehiculoZebra : IACharacterVehiculo
 
         // Obtener la distancia al enemigo y calcular el valor difuso basado en esa distancia
         float distanceToEnemy = Vector3.Distance(transform.position, AIEye.ViewEnemy.transform.position);
-        float fuzzyValue = _CalculateDiffuse.CalculateFuzzy(distanceToEnemy);
+        float fuzzyValue = _LogicDiffuse.SpeedDependDistanceAttackEnemy.CalculateFuzzy(distanceToEnemy);
 
         // Definir la dirección básica de evasión
         Vector3 dir = (transform.position - AIEye.ViewEnemy.transform.position).normalized;
